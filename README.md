@@ -1,3 +1,7 @@
+* http://www.hsuchihyung.cn/2016/10/08/laravel-kai-fa-api/
+* http://php.net/manual/en/language.oop5.changelog.php
+* http://php.net/manual/zh/migration70.new-features.php
+
 * nginx conf
 
 ```
