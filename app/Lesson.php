@@ -4,6 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Lesson
+ *
+ * @mixin \Eloquent
+ */
 class Lesson extends Model
 {
     //
