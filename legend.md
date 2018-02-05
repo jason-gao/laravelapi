@@ -132,6 +132,18 @@ Written new phpDocBlock to /mnt/hgfs/YunDun/jason-gao/laravelapi/app/User.php
 * 更优雅的错误提示
 * php721 artisan make:controller ApiController
 
+* 自带auth系统
+* php721 artisan make:auth
+* http://laravelapijasong.vm/login
+* http://laravelapijasong.vm/password/reset
+* http://laravelapijasong.vm/register
+
+
+* api保存课程接口
+* api/v4/lesson post
+* 如果要用create方法，需要在对应的模型里添加$fillable属性
+
+
 
 
 
