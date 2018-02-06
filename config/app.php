@@ -178,9 +178,18 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
+         * dingo api
+         */
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        /*
+         * jwt
+         */
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
+        /*
          * ide helper
          */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
 
     ],
 
@@ -231,6 +240,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // jwt
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 
 ];

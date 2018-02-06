@@ -1,4 +1,7 @@
 * http://www.hsuchihyung.cn/2016/10/08/laravel-kai-fa-api/
+* https://github.com/z-song
+* https://laravel-china.org/articles/6035/laravel55-developing-api-combat
+* https://github.com/GeekGhc/adminLTE-for-laravel
 
 * laravel 5.5.0
 * php721是我的php7.2.1可执行行文件，指定Php7.2.1去安装laravel
@@ -142,6 +145,54 @@ Written new phpDocBlock to /mnt/hgfs/YunDun/jason-gao/laravelapi/app/User.php
 * api保存课程接口
 * api/v4/lesson post
 * 如果要用create方法，需要在对应的模型里添加$fillable属性
+
+
+* 添加dingo api和jwt认证
+* http://jellybook.me/articles/2017/03/laravel-jwt-api
+* https://github.com/dingo/api/wiki/Configuration
+* https://github.com/liyu001989/laravel-api-starter
+* https://github.com/liyu001989/dingo-api-wiki-zh
+
+```
+"dingo/api": "v2.0.0-alpha1",
+"tymon/jwt-auth": "1.0.0-rc.1"
+
+```
+* php721 /usr/local/bin/composer update
+* [更新完后，原来的路由已经不能访问了]
+
+* dingo api
+    * config/app.php注册providers
+    * Dingo\Api\Provider\LaravelServiceProvider::class,
+    * php721 artisan vendor:publish --provider="Dingo\Api\Provider\LaravelServiceProvider"
+    * config下生成api.php
+    * .env添加dingo api配置
+    ```
+    API_STANDARDS_TREE=vnd
+    API_PREFIX=api
+    API_VERSION=v1
+    API_DEBUG=true
+    ```    
+
+* jwt
+    * https://github.com/tymondesigns/jwt-auth/blob/develop/docs/laravel-installation.md
+    * config/app.php注册服务提供者providers
+    * Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
+    * alias添加
+    ```
+        // jwt
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+    ```
+    * php721 artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+    ```
+        Copied File [/vendor/tymon/jwt-auth/config/config.php] To [/config/jwt.php]
+    ```
+    * config下生成jwt.php
+    * 生成jwt secret到.env
+    * php721 artisan jwt:secret
+
 
 
 
